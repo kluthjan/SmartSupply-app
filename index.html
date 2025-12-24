@@ -291,7 +291,7 @@
                 resetBtn: "Passwort zurücksetzen",
                 backToLogin: "Zurück zur Anmeldung",
                 enterCodeAndPass: "Bitte Code und neues Passwort eingeben.",
-                secureLocal: "Sichere, verschlüsselte lokale KI",
+                secureLocal: "Wir liefern inspirierenden Kundenservice",
                 noAccount: "Kein Konto? ",
                 alreadyRegistered: "Bereits registriert? ",
                 registerNow: "Jetzt registrieren"
@@ -378,7 +378,7 @@
                 resetBtn: "Reset Password",
                 backToLogin: "Back to Login",
                 enterCodeAndPass: "Please enter code and new password.",
-                secureLocal: "Secure, encrypted local AI",
+                secureLocal: "Delivering inspiring customer service support",
                 noAccount: "No account? ",
                 alreadyRegistered: "Already registered? ",
                 registerNow: "Register now"
@@ -465,7 +465,7 @@
                 resetBtn: "Reimposta Password",
                 backToLogin: "Torna al Login",
                 enterCodeAndPass: "Inserisci codice e nuova password.",
-                secureLocal: "IA locale sicura e crittografata",
+                secureLocal: "Offriamo un supporto clienti ispirante",
                 noAccount: "Non hai un account? ",
                 alreadyRegistered: "Già registrato? ",
                 registerNow: "Registrati ora"
@@ -552,7 +552,7 @@
                 resetBtn: "Restablecer Contraseña",
                 backToLogin: "Volver al inicio",
                 enterCodeAndPass: "Introduce código y nueva contraseña.",
-                secureLocal: "IA local segura y encriptada",
+                secureLocal: "Ofrecemos un soporte al cliente inspirador",
                 noAccount: "¿No tienes cuenta? ",
                 alreadyRegistered: "¿Ya registrado? ",
                 registerNow: "Regístrate ahora"
@@ -639,7 +639,7 @@
                 resetBtn: "Réinitialiser le mot de passe",
                 backToLogin: "Retour connexion",
                 enterCodeAndPass: "Entrez le code et le nouveau mot de passe.",
-                secureLocal: "IA locale sécurisée et chiffrée",
+                secureLocal: "Nous offrons un support client inspirant",
                 noAccount: "Pas de compte ? ",
                 alreadyRegistered: "Déjà inscrit ? ",
                 registerNow: "Inscrivez-vous"
@@ -726,7 +726,7 @@
                 resetBtn: "Wachtwoord resetten",
                 backToLogin: "Terug naar inloggen",
                 enterCodeAndPass: "Voer code en nieuw wachtwoord in.",
-                secureLocal: "Veilige, versleutelde lokale AI",
+                secureLocal: "Wij leveren inspirerende klantenservice",
                 noAccount: "Geen account? ",
                 alreadyRegistered: "Al geregistreerd? ",
                 registerNow: "Nu registreren"
@@ -1106,12 +1106,9 @@ TONALITY:
             return (
                 <div className="min-h-screen bg-slate-50 flex flex-col items-center justify-center p-4">
                     <div className="w-full max-w-md bg-white rounded-2xl shadow-xl -mt-20 overflow-hidden">
-                        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-8 text-center text-white">
-                            <div className="bg-white/20 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
-                                <Zap className="w-10 h-10 text-white" />
-                            </div>
-                            <h1 className="text-2xl font-bold">SmartSupply</h1>
-                            <p className="text-blue-100 text-sm mt-2">{mode === 'recovery' ? tAuth.recoveryModeTitle : tAuth.secureLocal}</p>
+                        <div className="bg-white p-8 text-center border-b border-slate-100">
+                            <img src="logo.png" alt="SmartSupply" className="h-16 mx-auto mb-4 object-contain" />
+                            <p className="text-slate-500 text-sm mt-2">{mode === 'recovery' ? tAuth.recoveryModeTitle : tAuth.secureLocal}</p>
                         </div>
 
                         <div className="p-8">
@@ -1161,7 +1158,7 @@ TONALITY:
                                         <div className="flex justify-between items-center mb-1">
                                             <label className="block text-sm font-medium text-slate-700">{tAuth.password || "Passwort"}</label>
                                             {mode === 'login' && (
-                                                <button onClick={() => setMode('recovery')} className="text-xs text-blue-600 hover:underline">
+                                                <button onClick={() => setMode('recovery')} className="text-xs text-slate-500 hover:text-slate-800 hover:underline">
                                                     {tAuth.forgotPassword}
                                                 </button>
                                             )}
@@ -1177,7 +1174,7 @@ TONALITY:
                                     </div>
                                 )}
 
-                                <button onClick={handleAuth} disabled={isLoading} className="w-full bg-blue-600 text-white py-2 rounded-lg font-bold hover:bg-blue-700 transition-colors flex items-center justify-center gap-2">
+                                <button onClick={handleAuth} disabled={isLoading} className="w-full bg-slate-800 text-white py-2 rounded-lg font-bold hover:bg-slate-900 transition-colors flex items-center justify-center gap-2">
                                     {isLoading ? <span className="animate-spin text-xl">◌</span> : (mode === 'login' ? tAuth.loginBtn : (mode === 'register' ? tAuth.registerBtn : tAuth.recoverySubmit))}
                                 </button>
                                 {mode === 'login' && (
@@ -1202,13 +1199,13 @@ TONALITY:
                         </div>
                         <div className="bg-slate-50 p-4 text-center text-sm text-slate-500 border-t border-slate-100">
                             {mode === 'recovery' ? (
-                                <button onClick={() => setMode('login')} className="text-blue-600 font-bold hover:underline">
+                                <button onClick={() => setMode('login')} className="text-slate-700 font-bold hover:underline">
                                     {tAuth.backToLogin}
                                 </button>
                             ) : (
                                 <>
                                     {mode === 'login' ? tAuth.noAccount : tAuth.alreadyRegistered}
-                                    <button onClick={() => setMode(mode === 'login' ? 'register' : 'login')} className="text-blue-600 font-bold hover:underline">
+                                    <button onClick={() => setMode(mode === 'login' ? 'register' : 'login')} className="text-slate-700 font-bold hover:underline">
                                         {mode === 'login' ? tAuth.registerNow : tAuth.loginBtn}
                                     </button>
                                 </>
@@ -1906,13 +1903,9 @@ Max Mustermann`;
                 <div className="min-h-screen bg-slate-50 flex flex-col font-sans text-slate-800">
                     <header className="bg-white border-b border-slate-200 px-6 py-4 flex items-center justify-between sticky top-0 z-50 shadow-sm">
                         <div className="flex items-center gap-2 cursor-pointer" onClick={() => setActiveTab('workspace')}>
-                            <div className="bg-gradient-to-br from-blue-600 to-indigo-600 p-2 rounded-lg text-white">
-                                <Zap className="w-5 h-5" />
-                            </div>
+                            <img src="logo.png" alt="SmartSupply" className="h-8 object-contain" />
                             <div>
-                                <h1 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
-                                    SmartSupply
-                                </h1>
+                                {/* Hidden title for semantics if needed, or just rely on alt text */}
                                 <div className="mt-1">
                                     {renderProviderBadge()}
                                 </div>
@@ -1925,14 +1918,14 @@ Max Mustermann`;
                                 <div className="bg-slate-100 rounded-lg p-1 flex gap-1 border border-slate-200">
                                     <button
                                         onClick={() => setLayoutMode('grid')}
-                                        className={`p-1.5 rounded-md transition-all ${layoutMode === 'grid' ? 'bg-white shadow text-blue-600' : 'text-slate-400 hover:text-slate-600'}`}
+                                        className={`p-1.5 rounded-md transition-all ${layoutMode === 'grid' ? 'bg-white shadow text-slate-700' : 'text-slate-400 hover:text-slate-600'}`}
                                         title={t.grid}
                                     >
                                         <LayoutGrid className="w-4 h-4" />
                                     </button>
                                     <button
                                         onClick={() => setLayoutMode('custom')}
-                                        className={`p-1.5 rounded-md transition-all ${layoutMode === 'custom' ? 'bg-white shadow text-blue-600' : 'text-slate-400 hover:text-slate-600'}`}
+                                        className={`p-1.5 rounded-md transition-all ${layoutMode === 'custom' ? 'bg-white shadow text-slate-700' : 'text-slate-400 hover:text-slate-600'}`}
                                         title={t.custom}
                                     >
                                         <AppWindow className="w-4 h-4" />
